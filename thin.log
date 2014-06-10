@@ -1,0 +1,6 @@
+Writing PID to tmp/pids/thin.pid
+Using rack adapter
+Thin web server (v1.6.2 codename Doc Brown)
+Maximum connections set to 1024
+Listening on 0.0.0.0:3000, CTRL+C to stop
+127.0.0.1 - - [10/Jun/2014 23:10:52] "GET / HTTP/1.1" 200 5 0.0071
