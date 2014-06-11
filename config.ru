@@ -1,3 +1,4 @@
-require_relative 'notes'
+require_relative 'api'
+require_relative 'app'
 
-run Sinatra::Application
+run Rack::Cascade.new [Notes::API, Notes::App]
