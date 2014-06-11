@@ -1,15 +1,16 @@
 ENV["RACK_ENV"] = 'test'
 
-require_relative '../notes'
+require_relative '../app'
 require 'rspec'
 require 'rack/test'
 require 'capybara'
 require 'capybara/rspec'
+require 'capybara-webkit'
 
 RSpec.configure do |config|
 
   def app
-    Sinatra::Application
+    Notes::App
   end 
 
   Capybara.app = app
