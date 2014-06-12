@@ -1,10 +1,15 @@
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - "gem install bundler"
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- gem install bundler
 
 script:
-  - "bundle exec rspec"
+- bundle exec rspec
 
-after_success:
-  - "bundle exec rake heroku"
+deploy:
+  provider: heroku
+  api_key:
+    secure: cufoNN6R661bkudNI65lMW6p5nbXb+qLp2DO6z2pXEWm8YuuluEdrim4VghSMdA5b5RBeYXRRxTe4YYkQdcQ3V//p+ds0czBU9Pag47BqlFkcDv8wiIrtV2MDZZqnD0KrXoseFc2lJtbKWpINJMhmLIlgNL/iTK06rgATPEHJJI=
+  app: notes-
+  on:
+    repo: christemple/notes
